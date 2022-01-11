@@ -1,0 +1,31 @@
+### Linear Search
+
+class LinearSearch(object):
+    
+    def __init__(self):
+        pass
+    
+    def search(self, target, searchedList, continue_search = False):
+        list_result = []
+        for i in range(len(searchedList)):
+            if target == searchedList[i]:
+                list_result.append(i)
+            if not continue_search and (len(list_result) != 0):
+                break
+            
+        return list_result
+    
+    @staticmethod
+    def search(target, searchedList, continue_search = False):
+        list_result = []
+        for i in range(len(searchedList)):
+            if target == searchedList[i]:
+                list_result.append(i)
+            if not continue_search and (len(list_result) != 0):
+                break
+            
+        return list_result        
+        
+        
+        
+        
