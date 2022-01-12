@@ -1,0 +1,43 @@
+class selectiveSearch(object):
+    def __init__(self):
+        pass
+    
+    def search(self, ls, mode=1, copy=True):
+        # mode:1 min to max; else, max to min
+        # copy: True, create a new list and doesn't change the original list; else, change the original list.
+        
+        from copy import deepcopy
+        if copy:
+            ls_copy = deepcopy(ls)
+            if mode == 1:
+                for i in range(len(ls_copy)):
+                    k = i
+                    for j in range(i, len(ls_copy)):
+                        if ls_copy[j] < ls_copy[k]:
+                            k = j
+                    ls_copy[i], ls_copy[k] = ls_copy[k], ls_copy[i]
+            else:
+                for i in range(len(ls_copy)):
+                    k = i
+                    for j in range(i, len(ls_copy)):
+                        if ls_copy[j] > ls_copy[k]:
+                            k = j
+                    ls_copy[i], ls_copy[k] = ls_copy[k], ls_copy[i]
+            return ls_copy
+        else:
+            if mode == 1:
+                for i in range(len(ls)):
+                    k = i
+                    for j in range(i, len(ls)):
+                        if ls[j] < ls[k]:
+                            k = j
+                    ls[i], ls[k] = ls[k], ls[i]
+            else:
+                for i in range(len(ls)):
+                    k = i
+                    for j in range(i, len(ls)):
+                        if ls[j] > ls[k]:
+                            k = j
+                    ls[i], ls[k] = ls[k], ls[i]
+
+            return ls
