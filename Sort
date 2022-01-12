@@ -1,8 +1,8 @@
-class selectiveSearch(object):
+class selectiveSort(object):
     def __init__(self):
         pass
     
-    def search(self, ls, mode=1, copy=True):
+    def sort(self, ls, mode=1, copy=True):
         # mode:1 min to max; else, max to min
         # copy: True, create a new list and doesn't change the original list; else, change the original list.
         
